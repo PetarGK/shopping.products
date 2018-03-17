@@ -1,19 +1,8 @@
-{
-    "PutRequest": {
-        "Item": {
-            "Id": {
-                "S": "4cec36b3-ad9b-4266-bb69-56aa1f1094a2"
-            },
-            "name": {
-                "S": "Product 1"
-            },
-            "description": {
-                "S": "Product description"
-            },
-            "price": {
-                "N": 2
-            }
-        },
-        "TableName": "shopping-dev-products"
+[
+    {
+      "id": "aa936959-26c6-4c0c-aaf0-7ecc9dca9173",
+      "name": "Product 1",
+      "description": "Product 1 description",
+      "price": 2.34
     }
-}
+  ]

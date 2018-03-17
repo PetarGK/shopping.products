@@ -24,7 +24,7 @@ custom:
       migrate: true  
       seed: true
     seed:
-      domain:
+      products:
         sources:
           - table: ${self:custom.productsTableName}
             sources: [./seed_data/products.json]          
