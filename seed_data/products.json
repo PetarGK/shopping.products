@@ -1,0 +1,19 @@
+{
+    "PutRequest": {
+        "Item": {
+            "Id": {
+                "S": "4cec36b3-ad9b-4266-bb69-56aa1f1094a2"
+            },
+            "name": {
+                "S": "Product 1"
+            },
+            "description": {
+                "S": "Product description"
+            },
+            "price": {
+                "N": 2
+            }
+        },
+        "TableName": "shopping-dev-products"
+    }
+}
