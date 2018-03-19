@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Products microservice",
   "scripts": {
+    "debug": "export SLS_DEBUG=* && node --inspect ./node_modules/.bin/sls offline -s dev",
     "start": "./node_modules/.bin/sls offline start -r us-east-1 --noTimeout",
-    "install:dynamodb": "./node_modules/.bin/sls dynamodb install",
-    "start:dynamodb": "./node_modules/.bin/sls dynamodb start -p 8000  --migrate true",
-    "test:integration": "env TEST_MODE=handler ./node_modules/.bin/mocha tests/integration_tests/test_cases --reporter spec --retries 3 --timeout 10000"
+    "integration_tests": "env TEST_MODE=handler ./node_modules/.bin/mocha tests/integration_tests/test_cases --reporter spec --retries 3 --timeout 10000"
   },
   "dependencies": {
     "co": "^4.6.0",
@@ -26,7 +25,8 @@
     "serverless-offline": "^3.18.0",
     "serverless-pseudo-parameters": "^1.4.2",
     "serverless-webpack": "^3.1.1",
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "webpack-node-externals": "^1.6.0"
   },
   "author": "Petar Korudzhiev",
   "license": "ISC"

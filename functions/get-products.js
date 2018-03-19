@@ -2,30 +2,19 @@
 
 const co = require('co');
 const dynamodb = require('serverless-dynamodb-client').doc;
-/*const ProductsService = require('../lib/products-service');
-const defaultResults = process.env.defaultResults || 8;
-const tableName = process.env.PRODUCTS_TABLE_NAME;
-let service = new ProductsService(dynamodb.doc);
-*/
+const ProductsService = require('../services/products-service');
 
-const defaultResults = process.env.defaultResults || 8;
+const limit = process.env.defaultResults || 8;
 const tableName = process.env.PRODUCTS_TABLE_NAME;
 
-function* getProducts(count) {
-  let req = {
-    TableName: tableName,
-    Limit: count
-  };
-
-  let resp = yield dynamodb.scan(req).promise();
-  return resp.Items;
-}
+let service = new ProductsService(dynamodb, tableName);
 
 module.exports.handler = co.wrap(function* (event, context, cb) {
-  let restaurants = yield getProducts(defaultResults);
+  let products = yield service.getProducts(limit);
+
   let response = {
     statusCode: 200,
-    body: JSON.stringify(restaurants)
+    body: JSON.stringify(products)
   }
 
   cb(null, response);

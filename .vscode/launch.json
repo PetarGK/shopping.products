@@ -14,7 +14,8 @@
                 "invoke", "local", "-f", "get-products", "-d", "{}"
             ],
             "env": {
-                "SLS_DEBUG": "*"
+                "SLS_DEBUG": "*",
+                "PRODUCTS_TABLE_NAME": "shopping-dev-products"
             }
         },
         {
@@ -26,8 +27,23 @@
                 "invoke", "local", "-f", "create-products", "-p", "request_payloads/create-product.json"
             ],
             "env": {
-                "SLS_DEBUG": "*"
+                "SLS_DEBUG": "*",
+                "PRODUCTS_TABLE_NAME": "shopping-dev-products"
             }
-        }        
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}/node_modules/.bin/serverless",
+            "args": [
+                "offline",
+                "start",
+                "--skipCacheInvalidation"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }                       
     ]
 }
