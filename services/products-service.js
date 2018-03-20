@@ -1,20 +1,15 @@
 class ProductsService {
-    constructor(db, tableName) {
-      this.db = db;
-      this.tableName = tableName; 
+    constructor(repo) {
+      this.repo = repo; 
     }
 
     *getProducts(count) {
-        let req = {
-            TableName: this.tableName,
-            Limit: count
-        };
-        
-        let resp = yield this.db.scan(req).promise();
-        return resp.Items;        
+        // validate count
+
+        return yield this.repo.getProducts(count);
     }
 
-    *saveProduct(product) {
+    saveProduct(product) {
         //validate product invariants
 
 
@@ -25,10 +20,10 @@ class ProductsService {
             Item: product
         };        
 
-        yield this.db.put(request).promise();
+        this.db.put(request).promise();
     }
 
-    *deleteProduct(id) {
+    deleteProduct(id) {
 
     }
   }
