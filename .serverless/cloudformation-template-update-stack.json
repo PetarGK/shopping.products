@@ -94,7 +94,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shopping-products/dev/1521978547100-2018-03-25T11:49:07.100Z/shopping-products.zip"
+          "S3Key": "serverless/shopping-products/dev/1521987247042-2018-03-25T14:14:07.042Z/shopping-products.zip"
         },
         "FunctionName": "shopping-products-dev-get-products",
         "Handler": "functions/get-products.handler",
@@ -118,14 +118,14 @@
         "GetDashproductsLogGroup"
       ]
     },
-    "GetDashproductsLambdaVersionNkg78S4NtKuOFa97gVh1VvuC7kzfAIpguXMHdEsBWg4": {
+    "GetDashproductsLambdaVersionXXzQxi9fuAKpcr2kBa8YmG0zxhrQ90GCvXbpX8kiLA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetDashproductsLambdaFunction"
         },
-        "CodeSha256": "b66CQVO2b6wZBfvNHs552bD3DyoW/CAX1GmVKp9kJL8="
+        "CodeSha256": "Q0El84D2ZIN8ffprM6aVUVoIdU3ti49hwNvHpJSrtx4="
       }
     },
     "GetDashproductsIamRoleLambdaExecution": {
@@ -267,7 +267,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1521978547109": {
+    "ApiGatewayDeployment1521987247053": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -344,7 +344,7 @@
     "GetDashproductsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetDashproductsLambdaVersionNkg78S4NtKuOFa97gVh1VvuC7kzfAIpguXMHdEsBWg4"
+        "Ref": "GetDashproductsLambdaVersionXXzQxi9fuAKpcr2kBa8YmG0zxhrQ90GCvXbpX8kiLA"
       }
     },
     "ServiceEndpoint": {

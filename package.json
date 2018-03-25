@@ -4,7 +4,8 @@
   "description": "Products microservice",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "export SLS_DEBUG=* && node --inspect ./node_modules/.bin/sls offline -s dev",
+    "start": "./node_modules/.bin/sls offline start -r us-east-1 --noTimeout"
   },
   "devDependencies": {
     "@types/aws-lambda": "0.0.22",
@@ -18,11 +19,10 @@
     "serverless-webpack": "^4.0.0",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.2",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-node-externals": "^1.6.0"
   },
   "author": "Petar Korudzhiev",
   "license": "MIT",
-  "dependencies": {
-    "serverless-dynamodb-client": "0.0.2"
-  }
+  "dependencies": {}
 }

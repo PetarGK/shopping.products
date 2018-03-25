@@ -27,7 +27,7 @@ custom:
       products:
         sources:
           - table: ${self:custom.productsTableName}
-            sources: [./seed_data/products.json]          
+            sources: [./products/seed_data/products.json]          
 
 provider:
   name: aws
