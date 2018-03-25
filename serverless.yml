@@ -19,7 +19,6 @@ custom:
       - Ref: AWS::Region
       - Ref: AWS::AccountId
       - table/${self:custom.productsTableName} 
-  webpackIncludeModules: true    
   dynamodb:
     start:
       migrate: true  
